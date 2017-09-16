@@ -20,12 +20,12 @@
 
 int main()
 {
-     int sum = 0;
-     for (int i = 0; i < 1000; ++i)
-     {
-         // Add i to sum if it is divisible by 3 or 5
-         sum += ((i % 5) == 0 || (i % 3) == 0) ? 
-             i : 0;
-     }
-     std::cout << "The sum of the multiples of 3 and 5 under 1000 is " << sum << ".";
+    int sum = 0;
+    for (int i = 0; i < 1000; ++i)
+    {
+        // Add i to sum if it is divisible by 3 or 5
+        sum += ((i % 5) == 0 || (i % 3) == 0) ? 
+            i : 0;
+    }
+    std::cout << "The sum of the multiples of 3 and 5 under 1000 is " << sum << ".";
 }
