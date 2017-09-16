@@ -27,5 +27,5 @@ int main()
         sum += ((i % 5 == 0) || (i % 3 == 0)) ? 
             i : 0;
     }
-    std::cout << "The sum of the multiples of 3 and 5 under 1000 is " << sum << ".";
+    std::cout << "The sum of the multiples of 3 and 5 under 1000 is " << sum << ".\n";
 }
