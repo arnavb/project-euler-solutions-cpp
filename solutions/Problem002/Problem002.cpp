@@ -29,6 +29,7 @@ int main()
     
     while(currentFibNum <= 4000000)
     {
+        // Add even fibonacci numbers
         fibNumSum += (currentFibNum % 2 == 0) ?
             currentFibNum : 0;
         
