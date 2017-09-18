@@ -16,6 +16,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
+#include "AllProblems.hpp"
+
 int problem001()
 {
     int sumMultiples = 0;
