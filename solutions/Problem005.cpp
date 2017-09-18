@@ -1,5 +1,5 @@
 /******************************************************************************
-* Solution to Problem 2 (https://projecteuler.net/problem=2) of Project Euler *
+* Solution to Problem 5 (https://projecteuler.net/problem=5) of Project Euler *
 * Copyright (C) 2017 Arnav Borborah                                           *
 *                                                                             *
 * This program is free software: you can redistribute it and/or modify        *
