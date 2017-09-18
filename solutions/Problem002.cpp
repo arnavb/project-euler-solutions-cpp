@@ -16,9 +16,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
-#include <iostream>
-
-int main()
+int problem002()
 {
     // Variables to keep track of Fibonacci numbers
     int previousFibNum2 = 0;
@@ -38,5 +36,6 @@ int main()
         previousFibNum1 = currentFibNum;
         currentFibNum = previousFibNum2 + previousFibNum1;
     }
-    std::cout << "The sum of the even fibonacci numbers less than 4,000,000 is " << fibNumSum << ".\n";
+    
+    return fibNumSum;
 }

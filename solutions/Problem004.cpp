@@ -16,10 +16,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
-#include <iostream>
 #include <string>
 
-int main()
+int problem004()
 {
     int largestPalindromeProduct = 0;
     
@@ -32,7 +31,7 @@ int main()
             std::string currentProductString = std::to_string(currentProduct);
             
             // Check if number is a palindrome by comparing number as string with its reverse
-            // Also check if number is greater than any other palindrome number we have seen already
+            // Also check if number is greater than our current largest palindrome number
             if (
                 (currentProductString == std::string{ currentProductString.rbegin(), currentProductString.rend() }) &&
                 (currentProduct > largestPalindromeProduct)
@@ -43,5 +42,5 @@ int main()
         }
     }
     
-    std::cout << "The largest palindrome number made from the product of two three digit numbers is " << largestPalindromeProduct << ".\n";
+    return largestPalindromeProduct;
 }
