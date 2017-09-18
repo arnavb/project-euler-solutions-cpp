@@ -16,8 +16,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
-#include "AllProblems.hpp"
-
 int problem002()
 {
     // Variables to keep track of Fibonacci numbers

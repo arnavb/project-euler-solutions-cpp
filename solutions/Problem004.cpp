@@ -16,7 +16,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
-#include "AllProblems.hpp"
 #include <string>
 
 int problem004()
