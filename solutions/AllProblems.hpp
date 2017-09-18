@@ -5,5 +5,6 @@
 int problem001();
 int problem002();
 int problem004();
+int problem005();
 
 #endif ALL_PROBLEMS_HPP_
