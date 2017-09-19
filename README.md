@@ -34,7 +34,7 @@ int main()
 }
 ```
 
-Each of the solutions are independent of one another, and don't depend on other files (other than the data files, see below), and have their own `main` function. Using this code is as easy as copying it into a project and running the file.
+Each of the solutions are independent of one another, don't depend on other files (other than the data files, see below), and have their own `main` function which solves the problem and prints out the solution to the console. Using this code is as easy as copying it into a project and running the file.
 
 The [data](./solutions/data) directory in the folder structure contains the data files that some problems need for their solutions. For example, [Problem 102](https://projecteuler.net/problem=102) needs a file called `triangles.txt` for its solution. Thus, for Problem 102, there will be a file called `triangles.txt` in the `data` directory.
 
