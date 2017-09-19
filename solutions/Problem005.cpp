@@ -16,7 +16,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
-int problem005()
+#include <iostream>
+
+int main()
 {
     int divisibleNumber = 1;
     
@@ -38,5 +40,5 @@ int problem005()
         ++divisibleNumber;
     }
     
-    return divisibleNumber;
+    std::cout << "Problem 005 solution: " << divisibleNumber << ".\n";
 }

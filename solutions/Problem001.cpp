@@ -16,7 +16,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
-int problem001()
+#include <iostream>
+
+int main()
 {
     int sumMultiples = 0;
     for (int i = 0; i < 1000; ++i)
@@ -26,5 +28,5 @@ int problem001()
             i : 0;
     }
     
-    return sumMultiples;
+    std::cout << "Problem 001 solution: " << sumMultiples << ".\n";
 }

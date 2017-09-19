@@ -16,7 +16,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
-int problem002()
+#include <iostream>
+
+int main()
 {
     // Variables to keep track of Fibonacci numbers
     int previousFibNum2 = 0;
@@ -37,5 +39,5 @@ int problem002()
         currentFibNum = previousFibNum2 + previousFibNum1;
     }
     
-    return fibNumSum;
+    std::cout << "Problem 002 solution: " << fibNumSum << ".\n";
 }

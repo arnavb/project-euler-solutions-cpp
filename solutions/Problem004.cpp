@@ -16,9 +16,10 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.       *
 ******************************************************************************/
 
+#include <iostream>
 #include <string>
 
-int problem004()
+int main()
 {
     int largestPalindromeProduct = 0;
     
@@ -42,5 +43,5 @@ int problem004()
         }
     }
     
-    return largestPalindromeProduct;
+    std::cout << "Problem 004 solution: " << largestPalindromeProduct << ".\n";
 }
