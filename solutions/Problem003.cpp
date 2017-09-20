@@ -33,9 +33,9 @@ int main()
         )   // If the number we are on is a factor of the number and larger than previous factors
         {
             highestPrimeFactor = currentFactor;
-            number /= currentFactor;
+            number /= currentFactor; // Make the number smaller, so it is easier to work with
         }
-        ++currentFactor;
+        ++currentFactor; // Increase the factor
     }
     
     std::cout << "Problem 003 solution: " << highestPrimeFactor << ".\n";
