@@ -22,7 +22,7 @@
 
 int main()
 {
-    long long int number = 600851475143LL;
+    long long int number = 600'851'475'143LL;
     long long int highestPrimeFactor = 0LL;
     long long int currentFactor = 2LL;
     while (number != 1)
