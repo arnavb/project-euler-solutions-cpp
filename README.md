@@ -1,5 +1,7 @@
 # Project Euler Solutions in C++
 
+[![license](https://img.shields.io/badge/license-GNU%20GPLv3-blue.svg)](./LICENSE)
+
 ![My Account](https://projecteuler.net/profile/arnavb11.png)
 
 This repository holds solutions to the [Project Euler Problems](https://projecteuler.net/archives) implemented in C++. Most of the solutions here are not optimized much and use the usual method for solving these problems.
