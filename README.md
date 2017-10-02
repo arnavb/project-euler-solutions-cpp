@@ -18,8 +18,7 @@ solutions/
 └── ...
 ```
 
-In this folder structure, each of the files labeled `Problem***.cpp` contain the corresponding Project Euler problems solution in a function called `problem***`.
-For example, the code for [Problem 1](https://projecteuler.net/problem=1) is located in [Problem001.cpp](./solutions/Problem001.cpp), and the file contains the following code:
+In this folder structure, each of the files labeled `Problem***.cpp` contain the corresponding Project Euler problem's solution. For example, the code for [Problem 1](https://projecteuler.net/problem=1) is located in [Problem001.cpp](./solutions/Problem001.cpp), and the file contains the following code:
 
 ```cpp
 int main()
@@ -36,7 +35,7 @@ int main()
 }
 ```
 
-Each of the solutions are independent of one another, don't depend on other files (other than the data files, see below), and have their own `main` function which solves the problem and prints out the solution to the console. Using this code is as easy as copying it into a project and running the file.
+Each of the solutions are independent of one another, don't depend on other files (other than the data files, see below), and have their own `main` function which solves the problem and prints out the solution to the console. Using this code is as easy as downloading and running the file.
 
 The [data](./solutions/data) directory in the folder structure contains the data files that some problems need for their solutions. For example, [Problem 102](https://projecteuler.net/problem=102) needs a file called `triangles.txt` for its solution. Thus, for Problem 102, there will be a file called `triangles.txt` in the `data` directory.
 
