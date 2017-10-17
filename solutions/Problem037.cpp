@@ -87,5 +87,5 @@ int main()
         }
         currentNumber += 2; //Only odd numbers can be prime other than 2, so no need to look at every number
     }
-    std::cout << "Problem 037 solution " << truncatablePrimeSum << ".\n";
+    std::cout << "Problem 037 solution: " << truncatablePrimeSum << ".\n";
 }
