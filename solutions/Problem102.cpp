@@ -26,8 +26,8 @@ struct Coord
 };
 
 double doubleTriangleArea(Coord a, Coord b, Coord c) // Double to prevent errors by floating-point math
-                                                     // Area doesn't actually need to be found either, just compared for equality
-                                                     // Multiplicative property of equality guarantees equality for this
+                                                     // Area doesn't actually need to be calculated either, 
+                                                     // just compared for equality
 {
     /*
      * Coordinate area method for Triangle:
