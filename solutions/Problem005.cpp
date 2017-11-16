@@ -24,16 +24,16 @@ int main()
     
     // Keep incrementing divisibleNumber until it is divisible from 1 - 20
     while (!(
-        (i % 11 == 0) &&
-        (i % 12 == 0) && // 4, 3, 6, and 2 as well
-        (i % 13 == 0) &&
-        (i % 14 == 0) && // 7 as well
-        (i % 15 == 0) && // 5 as well
-        (i % 16 == 0) && // 8 as well
-        (i % 17 == 0) &&
-        (i % 18 == 0) && // 9 as well
-        (i % 19 == 0) &&
-        (i % 20 == 0)    // 10 as well
+        (divisibleNumber % 11 == 0) &&
+        (divisibleNumber % 12 == 0) && // 4, 3, 6, and 2 as well
+        (divisibleNumber % 13 == 0) &&
+        (divisibleNumber % 14 == 0) && // 7 as well
+        (divisibleNumber % 15 == 0) && // 5 as well
+        (divisibleNumber % 16 == 0) && // 8 as well
+        (divisibleNumber % 17 == 0) &&
+        (divisibleNumber % 18 == 0) && // 9 as well
+        (divisibleNumber % 19 == 0) &&
+        (divisibleNumber % 20 == 0)    // 10 as well
         // No need to check for divisibility by 1
     ))
     {
