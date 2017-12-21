@@ -23,12 +23,14 @@
 #include <cstdlib>
 #include <string>
 
-std::vector<long long int> primes_upto(long long int limit) // Function that implements the Sieve of Eratosthenes
+std::vector<long long int> primesUpto(long long int limit) // Function that implements the Sieve of Eratosthenes
 {
     std::vector<bool> primesBoolArray(limit, true);
     std::vector <long long int> primesUptoLimit;
+    
     primesBoolArray[0] = primesBoolArray[1] = false;
     long long int sqrtLimit = std::sqrt(limit) + 1;
+    
     for (size_t i = 0; i < sqrtLimit; ++i)
     {
         if (primesBoolArray[i])
@@ -61,7 +63,7 @@ bool isTruncPrime(long long int number, const std::vector<long long int>& primeL
                 std::binary_search(primeList.begin(), primeList.end(), std::atol(truncLeft.c_str())) &&
                 std::binary_search(primeList.begin(), primeList.end(), std::atol(truncRight.c_str()))
             )   // If either of the two truncated sides are not prime
-        ) 
+        )
         {
             return false;
         }
@@ -71,7 +73,7 @@ bool isTruncPrime(long long int number, const std::vector<long long int>& primeL
 
 int main()
 {
-    const std::vector<long long int> primesUptoMillion = primes_upto(1000000); // Represents all the primes up to 1 million
+    const std::vector<long long int> primesUptoMillion = primesUpto(1000000); // Represents all the primes up to 1 million
     int numberTruncatablePrimes = 0;
     long long int currentNumber = 9; // 2, 3, 5, and 7 are not included in the search for truncatable primes
     long long int truncatablePrimeSum = 0;
@@ -85,7 +87,7 @@ int main()
             ++numberTruncatablePrimes; // Increase amount of truncatable primes
             truncatablePrimeSum += currentNumber; // Add the number's sum
         }
-        currentNumber += 2; //Only odd numbers can be prime other than 2, so no need to look at every number
+        currentNumber += 2; // Only odd numbers can be prime other than 2, so no need to look at every number
     }
     std::cout << "Problem 037 solution: " << truncatablePrimeSum << ".\n";
 }
