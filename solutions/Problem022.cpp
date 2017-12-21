@@ -77,5 +77,5 @@ int main()
         totalNameScores += getNameScore(names[i], i + 1); // Add each name score
     }
     
-    std::cout << "Problem 022 solution: " << totalNameScores << ".\n";
+    std::cout << totalNameScores << "\n";
 }

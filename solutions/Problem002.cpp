@@ -39,5 +39,5 @@ int main()
         currentFibNum = previousFibNum2 + previousFibNum1;
     }
     
-    std::cout << "Problem 002 solution: " << fibNumSum << ".\n";
+    std::cout << fibNumSum << "\n";
 }

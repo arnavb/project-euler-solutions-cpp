@@ -38,5 +38,5 @@ int main()
         ++currentFactor; // Increase the factor
     }
     
-    std::cout << "Problem 003 solution: " << highestPrimeFactor << ".\n";
+    std::cout << highestPrimeFactor << "\n";
 }

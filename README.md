@@ -33,7 +33,7 @@ int main()
          */
     }
     
-    std::cout << "Problem 001 solution: " << sumMultiples << ".\n";
+    std::cout << sumMultiples << "\n";
 }
 ```
 

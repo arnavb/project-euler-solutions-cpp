@@ -30,5 +30,5 @@ int main()
     }
     squareOfSum *= squareOfSum; // Square the sum
 
-    std::cout << "Problem 006 solution: " << (squareOfSum - sumOfSquares) << ".\n";
+    std::cout << (squareOfSum - sumOfSquares) << "\n";
 }

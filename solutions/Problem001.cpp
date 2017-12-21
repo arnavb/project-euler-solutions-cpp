@@ -28,5 +28,5 @@ int main()
             i : 0;
     }
     
-    std::cout << "Problem 001 solution: " << sumMultiples << ".\n";
+    std::cout << sumMultiples << "\n";
 }

@@ -49,5 +49,5 @@ int main()
         }
     }
     
-    std::cout << "Problem 014 solution: " << numWithLargestChain << ".\n";
+    std::cout << numWithLargestChain << "\n";
 }

@@ -41,5 +41,5 @@ int main()
             incrementRate += 2;
         }
     }
-    std::cout << "Problem 028 solution: " << diagonalNumberSum << ".\n";
+    std::cout << diagonalNumberSum << "\n";
 }

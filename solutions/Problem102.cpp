@@ -75,5 +75,5 @@ int main()
         std::cout << "Unable to open the file data/triangles.txt! Please check if the file exists in the appropriate location!\n";
     }
     
-    std::cout << "Problem 102 solution: " << numOriginTriangles << ".\n";
+    std::cout << numOriginTriangles << "\n";
 }

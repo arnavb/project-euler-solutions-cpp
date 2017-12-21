@@ -40,5 +40,5 @@ int main()
         ++divisibleNumber;
     }
     
-    std::cout << "Problem 005 solution: " << divisibleNumber << ".\n";
+    std::cout << divisibleNumber << "\n";
 }

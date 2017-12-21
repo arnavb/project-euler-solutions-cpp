@@ -43,5 +43,5 @@ int main()
         }
     }
     
-    std::cout << "Problem 004 solution: " << largestPalindromeProduct << ".\n";
+    std::cout << largestPalindromeProduct << "\n";
 }
