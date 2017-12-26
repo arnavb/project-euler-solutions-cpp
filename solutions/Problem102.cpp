@@ -26,7 +26,7 @@ struct Coord
     int y;
 };
 
-inline double doubleTriangleArea(Coord a, Coord b, Coord c) // Double to prevent errors by floating-point math
+inline int doubleTriangleArea(Coord a, Coord b, Coord c) // Double to prevent errors by floating-point math
                                                      // Area doesn't actually need to be calculated either, 
                                                      // just compared for equality
 {
@@ -44,7 +44,7 @@ bool containsOrigin(Coord a, Coord b, Coord c)
     // A triangle contains a point if the area of it as a whole is
     // equivalent to the sum of the areas of the three triangles
     // formed with two of the main triangle's points and the point
-    static Coord origin {0,0};
+    static Coord origin{ 0,0 };
     return doubleTriangleArea(a, b, c) == 
         (
             doubleTriangleArea(origin, a, b) + 
@@ -55,7 +55,7 @@ bool containsOrigin(Coord a, Coord b, Coord c)
 
 int main()
 {
-    std::ifstream trianglesFile("data/triangles.txt");
+    std::ifstream trianglesFile{ "data/triangles.txt" };
     int numOriginTriangles = 0;
     if (trianglesFile.is_open())
     {
