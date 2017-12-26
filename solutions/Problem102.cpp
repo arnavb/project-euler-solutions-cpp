@@ -29,6 +29,7 @@ struct Coord
 inline int doubleTriangleArea(Coord a, Coord b, Coord c) // Double to prevent errors by floating-point math
                                                          // Area doesn't actually need to be calculated either, 
                                                          // just compared for equality
+
 {
     /*
      * Coordinate area method for Triangle:
@@ -36,7 +37,7 @@ inline int doubleTriangleArea(Coord a, Coord b, Coord c) // Double to prevent er
      * A = | (x1(y2 - y3) + x2(y3 - y1) + x3(y1 - y2))/2 |
      *
      */
-     return std::abs((a.x * (b.y - c.y)) + (b.x * (c.y - a.y)) + (c.x * (a.y - b.y)));
+    return std::abs((a.x * (b.y - c.y)) + (b.x * (c.y - a.y)) + (c.x * (a.y - b.y)));
 }
 
 bool containsOrigin(Coord a, Coord b, Coord c)
