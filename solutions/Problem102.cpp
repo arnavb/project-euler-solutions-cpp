@@ -26,7 +26,7 @@ struct Coord
     int y;
 };
 
-inline int doubleTriangleArea(Coord a, Coord b, Coord c) // Area doesn't actually need to be calculated either, 
+inline int doubleTriangleArea(Coord a, Coord b, Coord c) // Area doesn't actually need to be calculated, 
                                                          // just compared for equality
 
 {
