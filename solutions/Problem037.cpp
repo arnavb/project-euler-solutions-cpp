@@ -31,7 +31,7 @@ std::array<bool, N> primesUpto() // Function that implements the Sieve of Eratos
     
     primesList[0] = primesList[1] = false;
     
-    long long int sqrtLimit = std::sqrt(N) + 1;
+    std::size_t sqrtLimit = std::sqrt(N) + 1;
     
     for (std::size_t i = 0; i < N; ++i)
     {
@@ -48,7 +48,7 @@ std::array<bool, N> primesUpto() // Function that implements the Sieve of Eratos
 }
 
 template<std::size_t N>
-bool isTruncPrime(long long int number, const std::array<bool, N>& primesList)
+bool isTruncPrime(std::size_t number, const std::array<bool, N>& primesList)
 {
     for (std::size_t i = 10; i < number; i *= 10)
     {
@@ -60,7 +60,7 @@ bool isTruncPrime(long long int number, const std::array<bool, N>& primesList)
     
     for (number; number >= 1; number /= 10)
     {
-        if (primesList[number] == 0) // If the left truncated is not prime
+        if (primesList[number] == 0) // If the left truncated part is not prime
         {
             return false;
         }
@@ -72,9 +72,9 @@ int main()
 {
     const auto primesUptoMillion = primesUpto<1'000'000ULL>(); // Represents all the primes up to 1 million
     
-    int numberTruncatablePrimes = 0;
-    long long int currentNumber = 11; // 2, 3, 5, and 7 are not included in the search for truncatable primes
-    long long int truncatablePrimeSum = 0;
+    std::size_t numberTruncatablePrimes = 0;
+    std::size_t currentNumber = 11; // 2, 3, 5, and 7 are not included in the search for truncatable primes
+    std::size_t truncatablePrimeSum = 0;
     
     while (numberTruncatablePrimes != 11) 
     {
