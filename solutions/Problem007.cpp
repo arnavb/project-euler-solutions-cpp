@@ -20,38 +20,45 @@
 
 #include <cmath>
 #include <iostream>
+#include <array>
 #include <vector>
 
-std::vector<long long int> primesUpto(long long int limit) // Function that implements the Sieve of Eratosthenes
+template<std::size_t N>
+std::vector<std::size_t> primesUpto() // Function that implements the Sieve of Eratosthenes
 {
-    std::vector<bool> primesBoolArray(limit, true);
-    std::vector <long long int> result;
+    std::array<bool, N> primesList;
     
-    primesBoolArray[0] = primesBoolArray[1] = false;
-    long long int sqrtLimit = std::sqrt(limit) + 1;
+    std::fill(primesList.begin(), primesList.end(), true);
     
-    for (size_t i = 0; i < sqrtLimit; ++i)
+    primesList[0] = primesList[1] = false;
+    
+    long long int sqrtLimit = std::sqrt(N) + 1;
+    
+    for (std::size_t i = 0; i < N; ++i)
     {
-        if (primesBoolArray[i])
+        if (primesList[i])
         {
-            for (size_t j = (2 * i); j < limit; j += i)
+            for (std::size_t j = i + i; j < N; j += i)
             {
-                primesBoolArray[j] = false;
+                primesList[j] = false;
             }
         }
     }
-    for (size_t i = 0; i < primesBoolArray.size(); ++i)
+    std::vector<std::size_t> result;
+    
+    for (std::size_t i = 0; i < primesList.size(); ++i)
     {
-        if (primesBoolArray[i])
+        if (primesList[i])
         {
             result.push_back(i);
         }
     }
+    
     return result;
 }
 
 int main()
 {
     // 1 Million is an arbitrary limit
-    std::cout << primesUpto(1'000'000)[10'000] << "\n";
+    std::cout << primesUpto<1'000'000>()[10'000] << "\n";
 }
