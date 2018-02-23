@@ -28,7 +28,7 @@
 std::vector<long long int> primesUpto(long long int limit) // Function that implements the Sieve of Eratosthenes
 {
     std::vector<bool> primesBoolArray(limit, true);
-    std::vector <long long int> primesUptoLimit;
+    std::vector <long long int> result;
     
     primesBoolArray[0] = primesBoolArray[1] = false;
     long long int sqrtLimit = std::sqrt(limit) + 1;
@@ -47,10 +47,10 @@ std::vector<long long int> primesUpto(long long int limit) // Function that impl
     {
         if (primesBoolArray[i])
         {
-            primesUptoLimit.push_back(i);
+            result.push_back(i);
         }
     }
-    return primesUptoLimit;
+    return result;
 }
 
 bool isTruncPrime(long long int number, const std::vector<long long int>& primeList)
@@ -76,6 +76,7 @@ bool isTruncPrime(long long int number, const std::vector<long long int>& primeL
 int main()
 {
     const std::vector<long long int> primesUptoMillion = primesUpto(1'000'000LL); // Represents all the primes up to 1 million
+    
     int numberTruncatablePrimes = 0;
     long long int currentNumber = 9; // 2, 3, 5, and 7 are not included in the search for truncatable primes
     long long int truncatablePrimeSum = 0;
