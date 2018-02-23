@@ -80,6 +80,7 @@ int main()
     int numberTruncatablePrimes = 0;
     long long int currentNumber = 9; // 2, 3, 5, and 7 are not included in the search for truncatable primes
     long long int truncatablePrimeSum = 0;
+    
     while (numberTruncatablePrimes != 11) 
     {
         if (
