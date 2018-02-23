@@ -18,54 +18,49 @@
 *
 */
 
-#include <vector>
-#include <iostream>
+#include <array>
 #include <cmath>
-#include <algorithm>
-#include <cstdlib>
-#include <string>
+#include <iostream>
 
-std::vector<long long int> primesUpto(long long int limit) // Function that implements the Sieve of Eratosthenes
+template<std::size_t N>
+std::array<bool, N> primesUpto() // Function that implements the Sieve of Eratosthenes
 {
-    std::vector<bool> primesBoolArray(limit, true);
-    std::vector <long long int> result;
+    std::array<bool, N> primesList;
     
-    primesBoolArray[0] = primesBoolArray[1] = false;
-    long long int sqrtLimit = std::sqrt(limit) + 1;
+    std::fill(primesList.begin(), primesList.end(), true);
     
-    for (size_t i = 0; i < sqrtLimit; ++i)
+    primesList[0] = primesList[1] = false;
+    
+    long long int sqrtLimit = std::sqrt(N) + 1;
+    
+    for (std::size_t i = 0; i < N; ++i)
     {
-        if (primesBoolArray[i])
+        if (primesList[i])
         {
-            for (size_t j = (2 * i); j < limit; j += i)
+            for (std::size_t j = i + i; j < N; j += i)
             {
-                primesBoolArray[j] = false;
+                primesList[j] = false;
             }
         }
     }
-    for (size_t i = 0; i < primesBoolArray.size(); ++i)
-    {
-        if (primesBoolArray[i])
-        {
-            result.push_back(i);
-        }
-    }
-    return result;
+    
+    return primesList;
 }
 
-bool isTruncPrime(long long int number, const std::vector<long long int>& primeList)
+template<std::size_t N>
+bool isTruncPrime(long long int number, const std::array<bool, N>& primesList)
 {
-    std::string numberString = std::to_string(number);
-    for (int i = 1; i < numberString.size(); ++i)
+    for (std::size_t i = 10; i < number; i *= 10)
     {
-        std::string truncLeft = numberString.substr(0, i); // The truncated prime from the left
-        std::string truncRight = numberString.substr(i, numberString.size() - 1); // The truncated prime from the right
-        if (!
-            (
-                std::binary_search(primeList.begin(), primeList.end(), std::atol(truncLeft.c_str())) &&
-                std::binary_search(primeList.begin(), primeList.end(), std::atol(truncRight.c_str()))
-            )   // If either of the two truncated sides are not prime
-        )
+        if (primesList[number % i] == 0) // If the right truncated part is not prime
+        {
+            return false;
+        }
+    }
+    
+    for (number; number >= 1; number /= 10)
+    {
+        if (primesList[number] == 0) // If the left truncated is not prime
         {
             return false;
         }
@@ -75,16 +70,16 @@ bool isTruncPrime(long long int number, const std::vector<long long int>& primeL
 
 int main()
 {
-    const std::vector<long long int> primesUptoMillion = primesUpto(1'000'000LL); // Represents all the primes up to 1 million
+    const auto primesUptoMillion = primesUpto<1'000'000ULL>(); // Represents all the primes up to 1 million
     
     int numberTruncatablePrimes = 0;
-    long long int currentNumber = 9; // 2, 3, 5, and 7 are not included in the search for truncatable primes
+    long long int currentNumber = 11; // 2, 3, 5, and 7 are not included in the search for truncatable primes
     long long int truncatablePrimeSum = 0;
     
     while (numberTruncatablePrimes != 11) 
     {
         if (
-            std::binary_search(primesUptoMillion.begin(), primesUptoMillion.end(), currentNumber) && // If the number itself is prime
+            primesUptoMillion[currentNumber] && // If the number itself is prime
             isTruncPrime(currentNumber, primesUptoMillion) // If the number is also a truncatable prime
         )
         {
