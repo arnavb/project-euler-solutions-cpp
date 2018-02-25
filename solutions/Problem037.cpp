@@ -33,7 +33,7 @@ std::array<bool, N> primesUpto() // Function that implements the Sieve of Eratos
     
     std::size_t sqrtLimit = std::sqrt(N) + 1;
     
-    for (std::size_t i = 0; i < N; ++i)
+    for (std::size_t i = 0; i < sqrtLimit; ++i)
     {
         if (primesList[i])
         {
