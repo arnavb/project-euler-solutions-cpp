@@ -1,0 +1,26 @@
+dist: trusty
+sudo: require
+
+language:
+    - cpp
+    - python
+
+compiler:
+    - gcc
+
+python:
+    - 3.4
+
+addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+        packages:
+            - gcc-5
+            - g++-5
+
+script:
+    - sudo ln -s /usr/bin/gcc-5 /usr/local/bin/gcc
+    - sudo ln -s /usr/bin/g++-5 /usr/local/bin/g++
+    - gcc -v && g++ -v && cmake --version
+    - python $TRAVIS_BUILD_DIR/test/test_all_solutions.py ../solutions
