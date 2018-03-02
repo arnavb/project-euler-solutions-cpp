@@ -2,7 +2,7 @@ import glob # For getting all the solution files
 import os # For checking if path exists
 import shutil # For deleting the data directory
 import subprocess # For executing the files
-import sys # For commond line arguments
+import sys # For command line arguments
 import distutils # For copying the data directory
 from distutils import dir_util # https://stackoverflow.com/a/33417555/6525260
 
