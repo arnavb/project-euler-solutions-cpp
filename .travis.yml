@@ -22,5 +22,5 @@ addons:
 script:
     - sudo ln -s /usr/bin/gcc-7 /usr/local/bin/gcc
     - sudo ln -s /usr/bin/g++-7 /usr/local/bin/g++
-    - gcc -v && g++ -v && cmake --version
+    - gcc -v && g++ -v
     - python $TRAVIS_BUILD_DIR/test/test_all_solutions.py $TRAVIS_BUILD_DIR/solutions/ g++-7
