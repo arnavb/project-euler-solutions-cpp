@@ -25,12 +25,17 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
         
     files.sort()
     
-    print("\nThe following files were found: " + ' '.join(files) + "\n")
+    print("\nThe following files were found: ")
+    
+    for file in files:
+        print(file)
+    
+    print("\n")
     
     try:
         dir_util.copy_tree(directory_name + "/data/", "./data/") # Copy the data folder that some solutions need
     except dir_util.DistutilsFileError:
-        print(colors.WARNING + "The data folder was unable to be copied from " + directory_name + "/data/ to ./data/!")
+        print(colors.WARNING + "The data folder was unable to be copied from " + directory_name + " to ./data!")
         print("Some solutions may not be able to compile!\n" + colors.ENDC)
 
     passed_tests = 0
@@ -72,7 +77,8 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
     if os.path.isfile('./a.out'): # Remove the new executable file
         os.remove('a.out')
     
-    shutil.rmtree("./data") # Remove the data directory
+    if os.path.isdir("./data"): # Remove the data directory
+        shutil.rmtree("./data")
     
     print("\n")
     
