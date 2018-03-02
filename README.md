@@ -1,6 +1,6 @@
 # Project Euler Solutions in C++
 
-[![license](https://img.shields.io/badge/license-GNU%20GPLv3-blue.svg)](./LICENSE)
+[![Build Status](https://travis-ci.org/arnavb/project-euler-solutions-cpp.svg?branch=master)](https://travis-ci.org/arnavb/project-euler-solutions-cpp) [![license](https://img.shields.io/badge/license-GNU%20GPLv3-blue.svg)](./LICENSE)
 
 ![My Account](https://projecteuler.net/profile/arnavb11.png)
 
