@@ -6,7 +6,7 @@ import sys # For commond line arguments
 import distutils # For copying the data directory
 from distutils import dir_util # https://stackoverflow.com/a/33417555/6525260
 
-def test_all_solutions(directory_name, expected_solutions):
+def test_all_solutions(directory_name, compiler_name, expected_solutions):
     files = glob.glob(directory_name + "/Problem***.cpp")
     
     if not files:
@@ -26,7 +26,7 @@ def test_all_solutions(directory_name, expected_solutions):
     passed_tests = 0
     
     for file in files:
-        compile_command = "g++-5 " + file + " -std=c++14 -O2"
+        compile_command = compiler_name + " " + file + " -std=c++14 -O2"
         current_key = file[-7: -4]
         
         print("===============")
@@ -94,8 +94,11 @@ if __name__ == '__main__':
         "102": 228
     }
     
-    if len(sys.argv) != 2 or not os.path.exists(sys.argv[1]): 
-        print("Usage: " + sys.argv[0] + " path/to/problems")
+    if len(sys.argv) != 3: 
+        print("Error: Missing operands!")
+        print("Usage: " + sys.argv[0] + " path/to/problems compile-command")
         sys.exit(1)
+    elif not os.path.exists(sys.argv[1]):
+        print("Error: Path " + sys.argv[1] + " does not exist!")
     else:
-        sys.exit(test_all_solutions(sys.argv[1], expected_solutions))
+        sys.exit(test_all_solutions(sys.argv[1], sys.argv[2], expected_solutions))
