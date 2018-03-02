@@ -16,11 +16,9 @@ addons:
         sources:
             - ubuntu-toolchain-r-test
         packages:
-            - gcc-7
             - g++-7
 
 script:
-    - sudo ln -s /usr/bin/gcc-7 /usr/local/bin/gcc
-    - sudo ln -s /usr/bin/g++-7 /usr/local/bin/g++
-    - gcc -v && g++ -v
-    - python $TRAVIS_BUILD_DIR/test/test_all_solutions.py $TRAVIS_BUILD_DIR/solutions/ g++-7
+    - g++-7 --version
+    - cd test
+    - python3 test_all_solutions.py $TRAVIS_BUILD_DIR/solutions/ g++-7
