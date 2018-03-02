@@ -66,9 +66,9 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
                         print("\nResult: " + colors.OKGREEN +  "SUCCESS" + colors.ENDC)
                         passed_tests += 1
                     else:
-                        print("\nResult: " + colors.FAIL + "FAILURE:" + colors.ENDC +  "Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!")
+                        print("\nResult: " + colors.FAIL + "FAILURE:" + colors.ENDC + "Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!")
                 else:
-                    print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC "Expected solution to problem " + str(current_key) + " was not found!")
+                    print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC + "Expected solution to problem " + str(current_key) + " was not found!")
             except ValueError:
                 print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC + "Output is of non-integer type!")
             
