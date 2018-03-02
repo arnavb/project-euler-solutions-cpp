@@ -96,5 +96,6 @@ if __name__ == '__main__':
     
     if len(sys.argv) != 2 or not os.path.exists(sys.argv[1]): 
         print("Usage: " + sys.argv[0] + " path/to/problems")
+        sys.exit(1)
     else:
         sys.exit(test_all_solutions(sys.argv[1], expected_solutions))
