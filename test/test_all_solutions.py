@@ -49,7 +49,7 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
         print("Trying to compile " + file + " with " + compile_command)
         
         if (subprocess.call(compile_command.split(), stdout = subprocess.DEVNULL, stderr = subprocess.STDOUT) != 0): # Compile the current file
-            print("Result: " + colors.FAIL + "FAILURE: File was unable to be compiled!" + colors.ENDC)
+            print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC + "File was unable to be compiled!")
         else:
             try:
                 print("File was successfully able to be compiled. Running executable with ./a.out\n")
@@ -66,11 +66,11 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
                         print("\nResult: " + colors.OKGREEN +  "SUCCESS" + colors.ENDC)
                         passed_tests += 1
                     else:
-                        print("\nResult: " + colors.FAIL + "FAILURE: Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!" + colors.ENDC)
+                        print("\nResult: " + colors.FAIL + "FAILURE:" + colors.ENDC +  "Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!")
                 else:
-                    print("Result: " + colors.FAIL + "FAILURE: Expected solution to problem " + str(current_key) + " was not found!" + colors.ENDC)
+                    print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC "Expected solution to problem " + str(current_key) + " was not found!")
             except ValueError:
-                print("Result: " + colors.FAIL + "FAILURE: Output is of non-integer type!" + colors.ENDC)
+                print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC + "Output is of non-integer type!")
             
     print(colors.BOLD + "===============" + colors.ENDC)        
         
