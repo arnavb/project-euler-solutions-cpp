@@ -76,7 +76,7 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
         print(f"Result: {color_string(colors.OKGREEN, 'SUCCESS')}")
         return 0
     else:
-        print(f"Result: {color_string(colors.FAIL, 'SUCCESS')}")
+        print(f"Result: {color_string(colors.FAIL, 'FAILURE')}")
         return 1
     
     
