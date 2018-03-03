@@ -58,9 +58,11 @@ bool containsOrigin(Coord a, Coord b, Coord c)
 int main()
 {
     std::ifstream trianglesFile{ "data/triangles.txt" };
-    int numOriginTriangles = 0;
+    
     if (trianglesFile.is_open())
     {
+        int numOriginTriangles = 0;
+        
         Coord a, b, c;
         char comma; // Since each part of a coordinate is comma separated
         while (trianglesFile >> a.x >> comma >> a.y >> comma >> b.x >> comma >> b.y >> comma >> c.x >> comma >> c.y)
@@ -71,11 +73,11 @@ int main()
             }
         }
         trianglesFile.close();
+        
+        std::cout << numOriginTriangles << "\n";
     }
     else
     {
         std::cout << "Unable to open the file data/triangles.txt! Please check if the file exists in the appropriate location!\n";
     }
-    
-    std::cout << numOriginTriangles << "\n";
 }
