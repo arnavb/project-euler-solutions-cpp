@@ -44,11 +44,11 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
         current_key = file[-7: -4]
         
         print(colors.BOLD + "===============" + colors.ENDC)
-        print(colors.OKBLUE + "TEST: " + colors.ENDC + "Problem " + str(current_key) + "\n")
+        print(colors.OKBLUE + "TEST" + colors.ENDC + ": Problem " + str(current_key) + "\n")
         print("Trying to compile " + file + " with " + compile_command)
         
         if (subprocess.call(compile_command.split(), stdout = subprocess.DEVNULL, stderr = subprocess.STDOUT) != 0): # Compile the current file
-            print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC + "File was unable to be compiled!")
+            print("Result: " + colors.FAIL + "FAILURE" + colors.ENDC + ": File was unable to be compiled!")
         else:
             try:
                 print("File was successfully able to be compiled. Running executable with ./a.out\n")
@@ -65,11 +65,11 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
                         print("\nResult: " + colors.OKGREEN +  "SUCCESS" + colors.ENDC)
                         passed_tests += 1
                     else:
-                        print("\nResult: " + colors.FAIL + "FAILURE:" + colors.ENDC + "Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!")
+                        print("\nResult: " + colors.FAIL + "FAILURE" + colors.ENDC + ": Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!")
                 else:
-                    print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC + "Expected solution to problem " + str(current_key) + " was not found!")
+                    print("Result: " + colors.FAIL + "FAILURE" + colors.ENDC + ": Expected solution to problem " + str(current_key) + " was not found!")
             except ValueError:
-                print("Result: " + colors.FAIL + "FAILURE:" + colors.ENDC + "Output is of non-integer type!")
+                print("Result: " + colors.FAIL + "FAILURE" + colors.ENDC + ": Output is of non-integer type!")
             
     print(colors.BOLD + "===============" + colors.ENDC)        
         
@@ -96,20 +96,17 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
 
 if __name__ == '__main__':
     
-    expected_solutions = {
-        "001": 233168,
-        "002": 4613732,
-        "003": 6857,
-        "004": 906609,
-        "005": 232792560,
-        "006": 25164150,
-        "007": 104743,
-        "014": 837799,
-        "022": 871198282,
-        "028": 669171001,
-        "037": 748317,
-        "102": 228
-    }
+    expected_solutions = { }
+    try:
+        with open("expected_solutions.txt", "r") as expected_solutions_file:
+            for line in expected_solutions_file:
+                line = line[:-1] # Remove trailing newlines
+                key_value_pair = line.split(" ")
+                if len(key_value_pair) == 2 and key_value_pair[1].isdigit(): # Extract all expected solutions; ignore bad entries
+                    print("Got here")
+                    expected_solutions[key_value_pair[0]] = int(key_value_pair[1])
+    except IOError:
+        print("Unable to open file './expected_solutions.txt'! Please check that the file is located in the current working directory!")
     
     if len(sys.argv) != 3: 
         print("Error: Missing operands!")
