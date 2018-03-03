@@ -15,6 +15,6 @@ addons:
 
 script:
     - g++-7 --version && g++-7 -v # Check if proper version of g++ (>=7.2) is installed
-    - python3 --version # Check if the proper version of python (>=3.4) is installed
+    - python --version # Check if the proper version of python (>=3.4) is installed
     - cd tests # Enter test directory
     - python test_all_solutions.py $TRAVIS_BUILD_DIR g++-7 # Run all tests
