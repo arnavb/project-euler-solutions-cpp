@@ -102,9 +102,8 @@ if __name__ == '__main__':
     try:
         with open("expected_solutions.txt", "r") as expected_solutions_file:
             for line in expected_solutions_file:
-                line = line[:-1] # Remove trailing newlines
                 key_value_pair = line.split(" ")
-                if len(key_value_pair) == 2 and key_value_pair[1].isdigit(): # Extract all expected solutions; ignore bad entries
+                if len(key_value_pair) == 2 and key_value_pair[1].strip().isdigit(): # Extract all expected solutions; ignore bad entries
                     print("Got here")
                     expected_solutions[key_value_pair[0]] = int(key_value_pair[1])
     except IOError:
