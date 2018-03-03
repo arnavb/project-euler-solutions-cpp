@@ -15,11 +15,14 @@ class colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+def color_string(color, string):
+    return color + string + colors.ENDC
+
 def test_all_solutions(directory_name, compiler_name, expected_solutions):
     files = glob.glob(directory_name + "/Problem***.cpp")
     
     if not files:
-        print(colors.FAIL + "Error: No files were found!" + colors.ENDC)
+        print(color_string(colors.FAIL, "Error: No files were found!"))
         return 1
         
     files.sort()
@@ -34,8 +37,7 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
     try:
         dir_util.copy_tree(directory_name + "/data/", "./data/") # Copy the data folder that some solutions need
     except dir_util.DistutilsFileError:
-        print(colors.WARNING + "The data folder was unable to be copied from " + directory_name + " to ./data!")
-        print("Some solutions may not be able to compile!\n" + colors.ENDC)
+        print(color_string(colors.WARNING, "The data folder was unable to be copied from " + directory_name + " to ./data!\nSome solutions may not be able to compile!\n"))
 
     passed_tests = 0
     
@@ -43,12 +45,12 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
         compile_command = compiler_name + " " + file + " -std=c++14 -O2"
         current_key = file[-7: -4]
         
-        print(colors.BOLD + "===============" + colors.ENDC)
-        print(colors.OKBLUE + "TEST" + colors.ENDC + ": Problem " + str(current_key) + "\n")
+        print(color_string(colors.BOLD, "==============="))
+        print(color_string(colors.OKBLUE, "TEST") + ": Problem " + str(current_key) + "\n")
         print("Trying to compile " + file + " with " + compile_command)
         
         if (subprocess.call(compile_command.split(), stdout = subprocess.DEVNULL, stderr = subprocess.STDOUT) != 0): # Compile the current file
-            print("Result: " + colors.FAIL + "FAILURE" + colors.ENDC + ": File was unable to be compiled!")
+            print("Result: " + color_string(colors.FAIL, "FAILURE") + ": File was unable to be compiled!")
         else:
             try:
                 print("File was successfully able to be compiled. Running executable with ./a.out\n")
@@ -62,16 +64,16 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
                     print("Expected output: " + str(expected_solution))
                     
                     if current_output == expected_solution:
-                        print("\nResult: " + colors.OKGREEN +  "SUCCESS" + colors.ENDC)
+                        print("\nResult: " + color_string(colors.OKGREEN, "SUCCESS"))
                         passed_tests += 1
                     else:
-                        print("\nResult: " + colors.FAIL + "FAILURE" + colors.ENDC + ": Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!")
+                        print("\nResult: " + color_string(colors.FAIL, "FAILURE") + ": Current output " + str(current_output) + " does not match expected output " + str(expected_solution) + "!")
                 else:
-                    print("Result: " + colors.FAIL + "FAILURE" + colors.ENDC + ": Expected solution to problem " + str(current_key) + " was not found!")
+                    print("Result: " + color_string(colors.FAIL, "FAILURE") + ": Expected solution to problem " + str(current_key) + " was not found!")
             except ValueError:
-                print("Result: " + colors.FAIL + "FAILURE" + colors.ENDC + ": Output is of non-integer type!")
+                print("Result: " + color_string(colors.FAIL, "FAILURE") + ": Output is of non-integer type!")
             
-    print(colors.BOLD + "===============" + colors.ENDC)        
+    print(color_string(colors.BOLD, "==============="))        
         
     if os.path.isfile('./a.out'): # Remove the new executable file
         os.remove('a.out')
@@ -83,13 +85,13 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
     
     num_tests = len(expected_solutions)
     
-    print(colors.BOLD + str(passed_tests) + " out of " + str(num_tests) + " tests were successful." + colors.ENDC)
+    print(color_string(colors.BOLD, str(passed_tests) + " out of " + str(num_tests) + " tests were successful."))
     
     if passed_tests == num_tests:
-        print("Result: " + colors.OKGREEN +  "SUCCESS" + colors.ENDC)
+        print("Result: " + color_string(colors.OKGREEN, "SUCCESS"))
         return 0
     else:
-        print("Result: " + colors.FAIL + "FAILURE" + colors.ENDC)
+        print("Result: " + color_string(colors.FAIL, "SUCCESS"))
         return 1
     
     
