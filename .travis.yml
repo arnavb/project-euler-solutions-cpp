@@ -9,7 +9,7 @@ compiler:
     - gcc
 
 python:
-    - 3.4
+    - 3.6
 
 addons:
     apt:
