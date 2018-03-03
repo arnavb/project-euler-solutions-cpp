@@ -6,12 +6,11 @@ import sys # For command line arguments
 import distutils # For copying the data directory
 from distutils import dir_util # https://stackoverflow.com/a/33417555/6525260
 
-class colors: # https://stackoverflow.com/a/287944/6525260
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
+class colors:
+    OKBLUE = '\033[36;1m'
+    OKGREEN = '\033[32;1m'
+    WARNING = '\033[33;1m'
+    FAIL = '\033[31;1m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
