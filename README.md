@@ -54,4 +54,4 @@ All of the solutions in this project are fully conformant to standard C++14, and
 
 ### License
 
-This project is licensed under GNU GPLv3 License, as outlined in [LICENSE](./LICENSE). Before using the any of the code in this project, please read the license and follow its requirements.
+This project is licensed under GNU GPLv3 License, as outlined in [LICENSE](./LICENSE). Before using any of the code in this project, please read the license and follow its requirements.
