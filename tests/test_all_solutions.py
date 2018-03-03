@@ -29,15 +29,14 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
     
     print("\nThe following files were found: ")
     
-    for file in files:
-        print(file)
+    print(*files, sep = "\n")
     
     print("\n")
     
     try:
         dir_util.copy_tree(directory_name + "/data/", "./data/") # Copy the data folder that some solutions need
     except dir_util.DistutilsFileError:
-        print(color_string(colors.WARNING, "The data folder was unable to be copied from " + directory_name + " to ./data!\nSome solutions may not be able to compile!\n"))
+        print(color_string(colors.WARNING, "The data folder was unable to be copied from " + directory_name + "/solutions to ./data!\nSome solutions may not be able to compile!\n"))
 
     passed_tests = 0
     
@@ -104,16 +103,15 @@ if __name__ == '__main__':
             for line in expected_solutions_file:
                 key_value_pair = line.split(" ")
                 if len(key_value_pair) == 2 and key_value_pair[1].strip().isdigit(): # Extract all expected solutions; ignore bad entries
-                    print("Got here")
                     expected_solutions[key_value_pair[0]] = int(key_value_pair[1])
     except IOError:
         print("Unable to open file './expected_solutions.txt'! Please check that the file is located in the current working directory!")
     
     if len(sys.argv) != 3: 
         print("Error: Missing operands!")
-        print("Usage: " + sys.argv[0] + " path/to/problems compiler-name")
+        print("Usage: " + sys.argv[0] + " repository-root compiler-name")
         sys.exit(1)
     elif not os.path.exists(sys.argv[1]):
         print("Error: Path " + sys.argv[1] + " does not exist!")
     else:
-        sys.exit(test_all_solutions(sys.argv[1], sys.argv[2], expected_solutions))
+        sys.exit(test_all_solutions(sys.argv[1] + "/solutions", sys.argv[2], expected_solutions))
