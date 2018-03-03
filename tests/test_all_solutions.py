@@ -61,7 +61,8 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
     
     print(color_string(colors.BOLD, "==============="))
         
-        
+    print("\n")
+    
     if os.path.isfile('./a.out'): # Remove the new executable file
         os.remove('a.out')
     
