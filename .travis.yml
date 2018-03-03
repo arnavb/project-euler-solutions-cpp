@@ -1,15 +1,10 @@
 dist: trusty
 sudo: require
 
-language:
-    - cpp
-    - python
-
-compiler:
-    - gcc
+language: python
 
 python:
-    - 3.6
+    - 3.4
 
 addons:
     apt:
@@ -22,4 +17,4 @@ script:
     - g++-7 --version && g++-7 -v # Check if proper version of g++ (>7.2) is installed
     - python3 --version # Check if the proper version of python (>3.4) is installed
     - cd test # Enter test directory
-    - python3 test_all_solutions.py $TRAVIS_BUILD_DIR/solutions/ g++-7 # Run all tests
+    - python test_all_solutions.py $TRAVIS_BUILD_DIR/solutions/ g++-7 # Run all tests
