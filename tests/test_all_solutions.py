@@ -1,4 +1,3 @@
-import glob # For getting all the solution files
 import os # For checking if path exists
 import shutil # For deleting the data directory
 import subprocess # For executing the files
