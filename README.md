@@ -43,7 +43,7 @@ The [data](./solutions/data) directory in the folder structure contains the data
 
 ### Compatibility
 
-All of the solutions in this project are fully conformant to standard C++14, and are platform-independent. The only major dependency, which all standard compilers should have is the STL.
+All of the solutions in this project are fully conformant to standard C++14, and are platform-independent.
 
 ### Contributing
 
