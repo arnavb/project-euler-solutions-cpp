@@ -39,7 +39,7 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
         print("Running: " + compile_command)
         
         if (subprocess.call(compile_command.split(), stdout = subprocess.DEVNULL, stderr = subprocess.STDOUT) != 0): # Compile the current file
-            print(f"Result: {color_string(colors.FAIL, 'FAILURE')}: File was unable to be compiled!")
+            print(f"\nResult: {color_string(colors.FAIL, 'FAILURE')}: File was unable to be compiled!")
         else:
             current_output_string = subprocess.check_output(['./a.out']).decode('utf-8') # Run the executable and capture the output
             if current_output_string.strip().isdigit():
@@ -55,7 +55,7 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
                 else:
                     print(f"{color_string(colors.FAIL, 'FAILURE')}: Current output {str(current_output)} does not match expected output {str(solution)}!")
             else:
-                print(f"Result: {color_string(colors.FAIL, 'FAILURE')}: Expected integer but found: ")
+                print(f"\nResult: {color_string(colors.FAIL, 'FAILURE')}: Expected integer but found: ")
                 print(current_output_string)
     
     print(color_string(colors.BOLD, "==============="))
