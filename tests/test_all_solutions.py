@@ -13,7 +13,7 @@ class colors: # ANSI escape codes for colors
     ENDC = "\033[0m"
     BOLD = "\033[1m"
     UNDERLINE = "\033[4m"
-    BRIGHTMAGENTA = "\033[95;1m"
+    BRIGHTMAGENTA = "\033[35;1m"
 
 def color_string(color, string):
     return color + string + colors.ENDC
