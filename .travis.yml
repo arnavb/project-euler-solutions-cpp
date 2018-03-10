@@ -11,10 +11,10 @@ addons:
         sources:
             - ubuntu-toolchain-r-test
         packages:
-            - g++-7
+            - g++-5
 
 script:
-    - g++-7 --version && g++-7 -v # Check if proper version of g++ (>=7.2) is installed
+    - g++-5 --version && g++-5 -v # Check if proper version of g++ (>=5) is installed
     - python --version # Check if the proper version of python (>=3.6) is installed
     - cd tests # Enter test directory
-    - python test_all_solutions.py $TRAVIS_BUILD_DIR g++-7 # Run all tests
+    - python test_all_solutions.py $TRAVIS_BUILD_DIR g++-5 # Run all tests
