@@ -1,6 +1,6 @@
 # Project Euler Solutions in C++
 
-[![Build Status](https://travis-ci.org/arnavb/project-euler-solutions-cpp.svg?branch=master)](https://travis-ci.org/arnavb/project-euler-solutions-cpp) [![license](https://img.shields.io/badge/license-GNU%20GPLv3-blue.svg)](./LICENSE)
+[![Build Status](https://travis-ci.org/arnavb/project-euler-solutions-cpp.svg?branch=master)](https://travis-ci.org/arnavb/project-euler-solutions-cpp) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7cb6c470c0d14f5980f78d31db4c7b58)](https://www.codacy.com/app/arnavb/project-euler-solutions-cpp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=arnavb/project-euler-solutions-cpp&amp;utm_campaign=Badge_Grade) [![license](https://img.shields.io/badge/license-GNU%20GPLv3-blue.svg)](./LICENSE)
 
 ![My Account](https://projecteuler.net/profile/arnavb11.png)
 
