@@ -34,7 +34,7 @@ std::vector<std::size_t> primesUpto() // Function that implements the Sieve of E
     
     long long int sqrtLimit = std::sqrt(N) + 1;
     
-    for (std::size_t i = 0; i < N; ++i)
+    for (std::size_t i = 0; i < sqrtLimit; ++i)
     {
         if (primesList[i])
         {
