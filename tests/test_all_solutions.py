@@ -25,7 +25,7 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
         print(color_string(colors.WARNING, f"The data folder was unable to be copied from {directory_name} to ./data!\nSome solutions may not be able to compile!\n"))
 
     passed_tests = 0
-    
+
     for problem, solution in expected_solutions.items():
         print(color_string(colors.BOLD, "==============="))
         print(f"{color_string(colors.OKBLUE, 'TEST')}: Problem {str(problem)}")
@@ -92,8 +92,8 @@ if __name__ == '__main__':
                     expected_solutions[key_value_pair[0]] = int(key_value_pair[1])
     except IOError:
         print("Unable to open file './expected_solutions.txt'! Please check that the file is located in the current working directory!")
-    
-    if len(sys.argv) != 3: 
+
+    if len(sys.argv) != 3:
         print("Error: Missing operands!")
         print(f"Usage: {sys.argv[0]} repository-root compiler-name")
         sys.exit(1)
