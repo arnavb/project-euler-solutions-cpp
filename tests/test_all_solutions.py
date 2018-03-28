@@ -29,25 +29,25 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
     for problem, solution in expected_solutions.items():
         print(color_string(colors.BOLD, "==============="))
         print(f"{color_string(colors.OKBLUE, 'TEST')}: Problem {str(problem)}")
-        
+
         current_file = directory_name + "/Problem" + problem + ".cpp"
-        
+
         print("\nFile: " + current_file)
-        
+
         compile_command = f"{compiler_name} {current_file} -std=c++14 -O2"
-        
+
         print("Running: " + compile_command)
-        
+
         if (subprocess.call(compile_command.split(), stdout = subprocess.DEVNULL, stderr = subprocess.STDOUT) != 0): # Compile the current file
             print(f"\nResult: {color_string(colors.FAIL, 'FAILURE')}: File was unable to be compiled!")
         else:
             current_output_string = subprocess.check_output(['./a.out']).decode('utf-8') # Run the executable and capture the output
             if current_output_string.strip().isdigit():
                 current_output = int(current_output_string)
-                
+
                 print(f"\nExpected output: {color_string(colors.BRIGHTMAGENTA, str(solution))}")
                 print(f"Current output: {color_string(colors.BRIGHTMAGENTA, str(current_output))}")
-                
+
                 print("\nResult: ", end = '')
                 if current_output == solution:
                     print(color_string(colors.OKGREEN, "SUCCESS"))
@@ -57,32 +57,29 @@ def test_all_solutions(directory_name, compiler_name, expected_solutions):
             else:
                 print(f"\nResult: {color_string(colors.FAIL, 'FAILURE')}: Expected integer but found: ")
                 print(current_output_string)
-    
+
     print(color_string(colors.BOLD, "==============="))
-        
+
     print("\n")
-    
+
     if os.path.isfile('./a.out'): # Remove the new executable file
         os.remove('a.out')
-    
+
     if os.path.isdir("./data"): # Remove the data directory
         shutil.rmtree("./data")
-    
+
     num_tests = len(expected_solutions)
-    
+
     print(color_string(colors.BOLD, str(passed_tests) + " out of " + str(num_tests) + " tests were successful."))
-    
+
     if passed_tests == num_tests:
         print(f"Result: {color_string(colors.OKGREEN, 'SUCCESS')}")
         return 0
     else:
         print(f"Result: {color_string(colors.FAIL, 'FAILURE')}")
         return 1
-    
-    
 
-if __name__ == '__main__':
-    
+if __name__ == '__main__':    
     expected_solutions = { }
     try:
         with open("expected_solutions.txt", "r") as expected_solutions_file:
