@@ -23,7 +23,6 @@
 int main()
 {
     // Variables to keep track of Fibonacci numbers
-    int previousFibNum2 = 0;
     int previousFibNum1 = 0;
     int currentFibNum = 1;
     
@@ -36,7 +35,7 @@ int main()
             currentFibNum : 0;
         
         // Update fibonacci numbers
-        previousFibNum2 = previousFibNum1;
+        int previousFibNum2 = previousFibNum1;
         previousFibNum1 = currentFibNum;
         currentFibNum = previousFibNum2 + previousFibNum1;
     }
